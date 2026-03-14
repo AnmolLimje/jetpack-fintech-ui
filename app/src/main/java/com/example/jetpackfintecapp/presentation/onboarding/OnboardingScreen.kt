@@ -11,6 +11,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.jetpackfintecapp.core.ui.FintechButton
+import com.example.jetpackfintecapp.presentation.components.TextWithLink
 
 @Composable
 fun OnboardingScreen(
@@ -44,20 +45,10 @@ fun OnboardingScreen(
         )
         
         Spacer(modifier = Modifier.height(24.dp))
-        
-        Row(
-            modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.Center,
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            Text("Already have an account? ", color = Color.Gray)
-            TextButton(
-                onClick = onSignInClick,
-                contentPadding = PaddingValues(0.dp)
-            ) {
-                Text("Sign in", color = Color(0xFF9162FF), fontWeight = FontWeight.Bold)
-            }
-        }
+
+        TextWithLink(
+            onSignInClick
+        )
         Spacer(modifier = Modifier.height(32.dp))
     }
 }

@@ -7,6 +7,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
+import com.example.jetpackfintecapp.core.ui.FintechButton
+import com.example.jetpackfintecapp.presentation.components.TextWithLink
 
 @Composable
 fun LoginScreen(
@@ -42,17 +44,16 @@ fun LoginScreen(
             modifier = Modifier.fillMaxWidth()
         )
         Spacer(modifier = Modifier.height(32.dp))
-        
-        Button(
-            onClick = onLoginSuccess,
-            modifier = Modifier.fillMaxWidth(),
-            shape = MaterialTheme.shapes.medium
-        ) {
-            Text("Login")
-        }
-        
-        TextButton(onClick = onNavigateToSignup) {
-            Text("Don't have an account? Sign up")
-        }
+
+        FintechButton(
+            text = "Login",
+            onClick = onLoginSuccess
+        )
+
+        TextWithLink(
+            onNavigateToSignup,
+            "Don't have an account?",
+            "Sign up"
+        )
     }
 }
