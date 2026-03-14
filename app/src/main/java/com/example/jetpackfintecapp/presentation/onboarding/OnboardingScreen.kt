@@ -47,7 +47,8 @@ fun OnboardingScreen(
         
         Row(
             modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.Center
+            horizontalArrangement = Arrangement.Center,
+            verticalAlignment = Alignment.CenterVertically
         ) {
             Text("Already have an account? ", color = Color.Gray)
             TextButton(
